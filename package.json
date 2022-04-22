@@ -6,8 +6,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "medusa start",
-    "start": "medusa develop",
-    "heroku-postbuild": "medusa migrations run",
+    "start": "medusa migrations run && medusa develop -p=8080",
     "prepare": "npm run build",
     "build": "babel src -d dist --extensions \".ts,.js\""
   },
@@ -33,5 +32,8 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-typescript": "^7.14.5",
     "babel-preset-medusa-package": "^1.1.13"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
